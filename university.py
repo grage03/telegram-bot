@@ -1,7 +1,9 @@
 import telebot
 import sqlite3
 
-bot = telebot.TeleBot("")
+from config import CONFIG
+
+bot = telebot.TeleBot(CONFIG['info']['token'])
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
@@ -25,7 +27,7 @@ def start_message(message):
 def show_university():
 	university = ''
 
-	db = sqlite3.connect('university.db')
+	db = sqlite3.connect('university_git.db')
 	sql = db.cursor()
 
 	sql.execute("SELECT univer, faculty_score FROM university")
@@ -38,9 +40,8 @@ def show_university():
 
 	return university
 
-
 def database(operation, text):
-	db = sqlite3.connect('university.db')
+	db = sqlite3.connect('university_git.db')
 	sql = db.cursor()
 
 	if operation == "ADD_UNIVERSITY":
