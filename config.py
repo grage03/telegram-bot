@@ -1,6 +1,7 @@
 CONFIG = {
 	'info': {
-		'token': '',
-		'version': '0.1'
+		'token': 'your token',
+		'version': '0.1',
+		'command': 'Доступные команды: \n\n/adduniversity\n/universitys'
 	}
 }
