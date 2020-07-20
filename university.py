@@ -7,7 +7,7 @@ bot = telebot.TeleBot(CONFIG['info']['token'])
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-	bot.send_message(message.chat.id, 'Доступные команды: \n\n/adduniversity\n/universitys')
+	bot.send_message(message.chat.id, CONFIG['info']['command'])
 
 @bot.message_handler(commands=['adduniversity'])
 def start_message(message):
